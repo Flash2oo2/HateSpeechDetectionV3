@@ -33,23 +33,31 @@
 
         <!-- Main Input For Receiving Query to our ML -->
         <div class="login-box">
-            <form action="/predict" method="post">
+            <form action="/">
                 <!-- <textarea rows="12" cols="60" name="content" placeholder="Enter the text..."
                 autocomplete="off">{{ email }}</textarea>
 
             <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> -->
 
                 <div class="user-box">
-                    <input type="text" name="content" required="">
-                    <label>Enter the text</label>
+
+                    {% if prediction %}
+                    {% if prediction == 1 %}
+                    <h2 class="neonText2 pulsate2">Hate Speech Detected</h2>
+                    {% else %}
+                    <h2 class="neonText pulsate1">Not a Hate Speech</h2>
+                    {% endif %}
+                    {% endif %}
+                    <p id="display"></p>
+
                 </div>
 
-                <a onclick="this.parentNode.submit();">
+                <a href="/">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    Submit
+                    Home
                 </a>
             </form>
 
@@ -60,8 +68,6 @@
 
 
         <div>
-
-
 
 
         </div>

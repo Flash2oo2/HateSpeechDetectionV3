@@ -13,7 +13,7 @@ def home():
 def predict():
     txt_msg = request.form.get("content")
     prediction = model_predict(txt_msg)
-    return render_template("index.html", prediction=prediction, txt_msg=txt_msg)
+    return render_template("index2.html", prediction=prediction, txt_msg=txt_msg)
 
 
 # Create an API endpoint
